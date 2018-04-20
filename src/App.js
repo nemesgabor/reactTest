@@ -41,7 +41,8 @@ class App extends Component {
 
   render() {
     const style = {
-      backgroundColor : 'white',
+      backgroundColor : 'green',
+      color: 'white',
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
@@ -61,25 +62,27 @@ class App extends Component {
               key={person.id}
               changed = {(event) => this.nameChangedHandler(event,person.id)}/>
           })}
-          {/* <Person 
-            name={this.state.persons[0].name} 
-            age={this.state.persons[0].age} />
-          <Person 
-            name={this.state.persons[1].name} 
-            age={this.state.persons[1].age}
-            click = {this.switchNameHandler.bind(this, 'Test5678')}
-            changed = {this.nameChangedHandler}>My hobbies: Racing</Person>        
-          <Person 
-            name={this.state.persons[2].name} 
-            age={this.state.persons[2].age} /> */}
-        </div>
+          
+        </div>        
       );
+
+      style.backgroundColor = 'red';
     }
+
+    const classes = [];
+
+    if(this.state.persons.length <=2) {
+      classes.push('red');
+    }
+    if(this.state.persons.length <=1){
+      classes.push('bold');
+    }
+
 
     return (
       <div className="App">
         <h1>Hi, React app here.</h1>
-        <p>Test text</p>
+        <p className={classes.join(' ')}>Test text</p>
         <button 
           style={style}
           onClick={this.togglePersonsHandler}>
