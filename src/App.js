@@ -80,16 +80,16 @@ class App extends Component {
 
 
     return (
-      <div className="App">
-        <h1>Hi, React app here.</h1>
-        <p className={classes.join(' ')}>Test text</p>
-        <button 
-          style={style}
-          onClick={this.togglePersonsHandler}>
-          Show/hide people
-        </button>
-        {persons}
-      </div>
+        <div className="App">
+          <h1>Hi, React app here.</h1>
+          <p className={classes.join(' ')}>Test text</p>
+          <button 
+            style={style}
+            onClick={this.togglePersonsHandler}>
+            Show/hide people
+          </button>
+          {persons}
+        </div>
     );
     // return React.createElement('div',{className:'App'}, React.createElement('h1',null,'Hi, React app here'))
   }
